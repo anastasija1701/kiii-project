@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  eShop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: eshop-app
+    container_name: eshop-app
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EShopDB;User=sa;Password=Password123!
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123!
+    ports:
+      - "1433:1433"
+    volumes:
+      - eshop-db-data:/var/opt/mssql
+
+volumes:
+  eshop-db-data:
+    driver: local
