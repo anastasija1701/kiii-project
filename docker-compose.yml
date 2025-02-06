@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: eshop-app
+    image: anastasija1701/eshop-app:latest
     container_name: eshop-app
     ports:
       - "5000:80"
