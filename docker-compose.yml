@@ -2,9 +2,6 @@ version: '3.4'
 
 services:
   eShop:
-    build:
-      context: .
-      dockerfile: Dockerfile
     image: anastasija1701/eshop-app:latest
     container_name: eshop-app
     ports:
