@@ -4,7 +4,6 @@ metadata:
   name: sql-server
   namespace: eshop
 spec:
-  # serviceName: sql-service
   serviceName: db
   replicas: 1
   selector:

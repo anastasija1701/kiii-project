@@ -4,5 +4,4 @@ metadata:
   name: eshop-config
   namespace: eshop
 data:
-  # ASPNETCORE_ENVIRONMENT: "Development"
   ConnectionStrings__DefaultConnection: "Server=db;Database=EShopDB;User=sa;Password=$(SA_PASSWORD);"
